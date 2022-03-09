@@ -1,7 +1,7 @@
 from keras.models import *
 from keras.layers import *
 import tensorflow as tf
-import keras as K
+
 class L2Norm(Layer):
     '''
     Code borrows from https://github.com/flyyufelix/cnn_finetune
@@ -16,7 +16,7 @@ class L2Norm(Layer):
 
     def build(self, input_shape):
         self.input_spec = [InputSpec(shape=input_shape)]
-        self.gamma = K.variable(self.gamma_init((self.n_channels,)), name='{}_gamma'.format(self.name))
+        self.gamma = tf.keras.backend.variable(self.gamma_init((self.n_channels,)), name='{}_gamma'.format(self.name))
         self.trainable_weights = [self.gamma]
         self.built = True
 
