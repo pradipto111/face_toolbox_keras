@@ -1,7 +1,7 @@
 from keras.models import *
 from keras.layers import *
 import tensorflow as tf
-
+import keras as K
 class L2Norm(Layer):
     '''
     Code borrows from https://github.com/flyyufelix/cnn_finetune
